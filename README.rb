@@ -85,9 +85,13 @@ learn more about the Jasmine syntax.
 15.$ ng serve
 in your browser on http://localhost:4200/.
 --> see "App Works!" again
-=======================
-
-
+======================== Implement User Interface ======================
+======================= Editing the AppComponent Component==============
+In Angular 2, parts of the user interface are represented by components.
+16. $ ng test
+Three tests are failing with the following error: Can't bind to 'ngModel' since it isn't a 
+known property of 'input'..
+Let’s open up src/app/app.component.spec.ts:
 
     
 
