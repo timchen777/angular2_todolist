@@ -2,15 +2,20 @@
 
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { FormsModule } from '@angular/forms';
+import { Todo } from './todo';
 
 describe('AppComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
+      imports: [
+        FormsModule
+      ],      
       declarations: [
         AppComponent
       ],
     });
-    TestBed.compileComponents();
+    // TestBed.compileComponents();
   });
 
   it('should create the app', async(() => {
@@ -18,17 +23,21 @@ describe('AppComponent', () => {
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   }));
-
-  it(`should have as title 'app works!'`, async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('app works!');
+// karma warns us that the component instance does not have a property title that equals app works! 
+// and that there is no h1 element that contains app works!.
+// That is correct because we changed the component logic and template. So let’s update the unit tests
+// accordingly:
+// We first add a unit test to make sure the newTodo property is instantiated correctly:
+  it(`should have a newTodo todo`, async(() => {
+    let fixture = TestBed.createComponent(AppComponent);
+    let app = fixture.debugElement.componentInstance;
+    expect(app.newTodo instanceof Todo).toBeTruthy()
   }));
-
-  it('should render title in a h1 tag', async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
+  // and then we add a unit test to make sure the h1 element contains the expected string:
+  it('should display "Todos" in h1 tag', async(() => {
+    let fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('app works!');
+    let compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('h1').textContent).toContain('Todos');
   }));
 });

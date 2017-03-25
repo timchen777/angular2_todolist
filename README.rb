@@ -91,8 +91,20 @@ In Angular 2, parts of the user interface are represented by components.
 16. $ ng test
 Three tests are failing with the following error: Can't bind to 'ngModel' since it isn't a 
 known property of 'input'..
-Let’s open up src/app/app.component.spec.ts:
-
+Failure #1:
+The reason Angular complains about not knowing ngModel(in app.modules.ts) , is because 
+the FormsModule (in app.modules.ts) is not loaded 
+when the AppComponent is instantiated by Karma using the TestBed.createComponent() method.
+To make sure Angular also loads the FormsModule when Karma instantiates the AppComponent 
+using TestBed.createComponent(), we must specify FormsModule in the imports property of 
+the Testbed configuration object: (in src/app/app.component.spec.ts)
+Failure #2,3:
+karma warns us that the component instance does not have a property title that equals app works! 
+and that there is no h1 element that contains app works!.
+That is correct because we changed the component logic and template. So let’s update the unit tests
+accordingly:(in src/app/app.component.spec.ts)
+17. $ ng test
+Test PASS!!
     
 
 
