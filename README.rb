@@ -105,6 +105,28 @@ That is correct because we changed the component logic and template. So let’s 
 accordingly:(in src/app/app.component.spec.ts)
 17. $ ng test
 Test PASS!!
-    
+18. $ ng serve 
+--> see http://localhost/4200   works!  or see demo in
+--> https://sitepoint-editors.github.io/todo-app/
+================== Deploying to GitHub Pages ===================
+The github-pages:deploy command tells Angular CLI to build a static version of our 
+Angular application and push it to the gh-pages branch of our GitHub repository:
+$ ng github-pages:deploy --message 'deploy(dist): deploy on GitHub pages'
+Built project successfully. Stored in "dist/".
+Deployed! Visit https://sitepoint-editors.github.io/todo-app/
+Github pages might take a few minutes to show the deployed site.
+Our application is now available at https://sitepoint-editors.github.io/todo-app/.
 
+GitHub Pages ???
+Your site is ready to be published at https://timchen777.github.io/angular2_todolist/.
+In this first article( https://www.sitepoint.com/angular-2-tutorial/ ), we learned:
+how to kickstart a new Angular application using Angular CLI
+how to implement business logic in an Angular service and 
+how to test our business logic with unit tests
+how to use a component to interact with the user and 
+how to delegate logic to a service using dependency injection
+the basics of Angular template syntax,
 
+next part Part2 (https://www.sitepoint.com/understanding-component-architecture-angular/)
+of this series, look at how we can create separate components to display a list of 
+todos and individual todo details.

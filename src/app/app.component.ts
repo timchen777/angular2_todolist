@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {Todo} from './todo';
 // Import class so we can use it as dependency injection token in the constructor
 import {TodoDataService} from './todo-data.service';

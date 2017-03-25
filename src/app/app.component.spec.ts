@@ -19,8 +19,8 @@ describe('AppComponent', () => {
   });
 
   it('should create the app', async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
+    let fixture = TestBed.createComponent(AppComponent);
+    let app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   }));
 // karma warns us that the component instance does not have a property title that equals app works! 
@@ -31,7 +31,7 @@ describe('AppComponent', () => {
   it(`should have a newTodo todo`, async(() => {
     let fixture = TestBed.createComponent(AppComponent);
     let app = fixture.debugElement.componentInstance;
-    expect(app.newTodo instanceof Todo).toBeTruthy()
+    expect(app.newTodo instanceof Todo).toBeTruthy();
   }));
   // and then we add a unit test to make sure the h1 element contains the expected string:
   it('should display "Todos" in h1 tag', async(() => {

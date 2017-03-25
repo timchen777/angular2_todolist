@@ -1,8 +1,8 @@
 /* tslint:disable:no-unused-variable */
 
-import { TestBed, async, inject } from '@angular/core/testing';
+import {TestBed, async, inject} from '@angular/core/testing';
 import {Todo} from './todo';
-import { TodoDataService } from './todo-data.service';
+import {TodoDataService} from './todo-data.service';
 
 // Karma comes pre-configured with Jasmine. You can read the Jasmine documentation 
 // to learn more about the Jasmine syntax.
